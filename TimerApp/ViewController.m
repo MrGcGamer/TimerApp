@@ -45,9 +45,9 @@
 //    alert.delegate = self;
     alert.alertStyle = NSAlertStyleWarning;
     alert.messageText = @"Are you sure, you wanna end it all for good?";
-    alert.informativeText = @"Ending it all may or may not give you massive amounts of releafe and pleassure.";
+    alert.informativeText = @"Ending it all may or may not bless you with massive amounts of relieve and pleasure.";
     [alert addButtonWithTitle:@"End it all."];
-    [alert addButtonWithTitle:@"Releaf may wait."];
+    [alert addButtonWithTitle:@"Relieve may wait."];
     
     
     NSInteger pill = [alert runModal];

@@ -11,6 +11,7 @@
     NSTimer *_timer;
     BOOL _runnin;
     NSUInteger _count;
+    NSUserDefaults *_prefs;
 }
 @end
 
@@ -18,6 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _prefs = [NSUserDefaults standardUserDefaults];
+    _count = ([_prefs integerForKey:@"Count"]) ?: 0;
+    NSString *timeString = [self stringForCount:_count];
+    [self.TimerLabel setStringValue:timeString];
 
     // Do any additional setup after loading the view.
 }
@@ -34,6 +40,7 @@
         _runnin = NO;
         [_timer invalidate];
         self.Start.title = @"Start";
+        [_prefs setValue:[NSNumber numberWithUnsignedLong:_count] forKey:@"Count"];
     } else {
         _runnin = YES;
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerCounter) userInfo:nil repeats:YES];
@@ -58,6 +65,7 @@
         [_timer invalidate];
         self.Start.title = @"Start";
         [self.TimerLabel setStringValue:@"00 : 00 : 00"];
+        [_prefs setValue:@0 forKey:@"Count"];
     } else {
         // nothing but a mere reference to the matrix.
         // Prefectly balanced, as it should be.

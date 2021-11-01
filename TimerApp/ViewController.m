@@ -25,9 +25,13 @@
     NSString *timeString = [self stringForCount:_count];
     [self.TimerLabel setStringValue:timeString];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(term) name:NSWindowWillCloseNotification object:nil];
     // Do any additional setup after loading the view.
 }
 
+- (void)term {
+    exit(0);
+}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
@@ -51,6 +55,7 @@
     NSAlert *alert = [NSAlert new];
 //    alert.delegate = self;
     alert.alertStyle = NSAlertStyleWarning;
+    alert.icon = [NSImage imageNamed:@"AppIcon"];
     alert.messageText = @"Are you sure, you wanna end it all for good?";
     alert.informativeText = @"Ending it all may or may not bless you with massive amounts of relieve and pleasure.";
     [alert addButtonWithTitle:@"End it all."];

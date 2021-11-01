@@ -721,24 +721,24 @@
                                     <action selector="TimerLabel:" target="XfG-lQ-9wD" id="oUn-4f-oob"/>
                                 </connections>
                             </textField>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-fe-had">
-                                <rect key="frame" x="276" y="158" width="70" height="32"/>
-                                <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UAh-FC-ufA">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="Reset:" target="XfG-lQ-9wD" id="tFB-0x-z50"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8U-fP-Uoc">
-                                <rect key="frame" x="39" y="158" width="244" height="32"/>
+                                <rect key="frame" x="39" y="158" width="188" height="32"/>
                                 <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pPn-cl-kek">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="Start:" target="XfG-lQ-9wD" id="wL6-vL-Xv2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9WU-fe-had">
+                                <rect key="frame" x="235" y="158" width="232" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UAh-FC-ufA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Reset:" target="XfG-lQ-9wD" id="tFB-0x-z50"/>
                                 </connections>
                             </button>
                         </subviews>

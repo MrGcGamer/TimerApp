@@ -27,6 +27,15 @@
     [self.TimerLabel setStringValue:timeString];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(term) name:NSWindowWillCloseNotification object:nil];
+//    NSLog(@"%f, %f, %f, %f",frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
+}
+
+- (void)viewDidAppear {
+    [super viewDidAppear];
+    
+    NSApplication *app = [NSApplication sharedApplication];
+    NSRect frame = app.keyWindow.frame;
+    [app.keyWindow setFrame:NSMakeRect(frame.origin.x, frame.origin.y, frame.size.width, 128) display:NO];
 }
 
 - (void)term {
@@ -67,13 +76,14 @@
     
     if (pill == NSAlertFirstButtonReturn) { // red pill
         _runnin = NO;
+        [_timer invalidate];
         _suffering = 0;
         self.Start.title = @"Start";
         [self.TimerLabel setStringValue:@"00 : 00 : 00"];
         [_prefs setValue:@0 forKey:@"Count"];
     } else {
         // nothing but a mere reference to the matrix.
-        // Prefectly balanced, as it should be.
+        // Prefectly balanced, as it all should be.
     }
 }
 
